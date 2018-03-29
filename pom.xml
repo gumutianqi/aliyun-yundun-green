@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.larrykoo</groupId>
+    <artifactId>aliyun-yundun-green</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>aliyun-green-extension</module>
+        <module>aliyun-green-spring-boot-starter</module>
+    </modules>
+
+    <name>aliyun-yundun-green::root</name>
+    <description>基于阿里云云盾-内容安全的SDK扩展实现</description>
+
+
+    <properties>
+        <java.version>1.8</java.version>
+        <aliyun-java-sdk-core.version>3.6.0</aliyun-java-sdk-core.version>
+        <aliyun-java-sdk-green.version>3.0.0</aliyun-java-sdk-green.version>
+        <okhttp.version>3.10.0</okhttp.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <guava.version>24.1-jre</guava.version>
+        <commons-lang3.version>3.7</commons-lang3.version>
+        <commons-codec.version>1.11</commons-codec.version>
+        <lombok.version>1.16.20</lombok.version>
+        <slf4j-api.version>1.7.24</slf4j-api.version>
+        <logback.version>1.2.3</logback.version>
+        <junit.version>4.12</junit.version>
+    </properties>
+
+    <scm>
+        <url>https://github.com/gumutianqi/aliyun-yundun-green</url>
+        <connection>https://github.com/gumutianqi/aliyun-yundun-green.git</connection>
+        <developerConnection>https://github.com/gumutianqi/aliyun-yundun-green.git</developerConnection>
+    </scm>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

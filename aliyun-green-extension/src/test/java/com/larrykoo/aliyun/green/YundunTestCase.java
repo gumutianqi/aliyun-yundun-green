@@ -1,42 +1,39 @@
-# aliyun-yundun-green
-阿里云云盾 ● 内容安全 API 的二次易用性封装
+/**
+ * Copyright (c) 2009-2016, LarryKoo (gumutianqi@gmail.com)
+ * Created on 2018/3/29
+ * <p/>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p/>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p/>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.larrykoo.aliyun.green;
 
-### SDK 特性描述
+import com.alibaba.fastjson.JSON;
+import com.aliyuncs.http.MethodType;
+import com.aliyuncs.http.ProtocolType;
+import com.larrykoo.aliyun.green.constant.CategoryConstants;
+import com.larrykoo.aliyun.green.constant.ScenesConstants;
+import com.larrykoo.aliyun.green.http.AccessUtil;
+import com.larrykoo.aliyun.green.http.AlibabaHttpKit;
+import com.larrykoo.aliyun.green.http.AlibabaRequest;
+import com.larrykoo.aliyun.green.request.*;
+import com.larrykoo.aliyun.green.response.AlibabaResponse;
+import com.larrykoo.aliyun.green.response.BodyResponse;
+import junit.framework.TestCase;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.codec.digest.DigestUtils;
 
-0. 阿里云接口文档和SDK包使用过程的坑，已经帮大家踩过了;
-1. 更加便捷的调用方式；
-2. 复杂的`Authorization`签名已经完美封装；
-3. 改变阿里云官方SDK`URLConnection`的调用方式，使用`OkHttp`发送HTTP请求；
-4. 请求`Request`参数和返回结果`Response`全部使用对象进行封装；方便读取和序列化；
-5. 紧随`Aliyun Restful API`步伐，不会因为阿里云SDK版本不兼容导致的问题；
-6. 持续更新……
+import javax.xml.bind.DatatypeConverter;
+import java.util.*;
 
-### 阿里云 文档同步
-
-> 当前 SDK 与阿里云文档同步时间：`2018-03-29`
-
-### Maven
-
-```java
-<dependency>
-    <groupId>com.larrykoo</groupId>
-    <artifactId>aliyun-green-extension</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-</dependency>
-```
-
-### Spring Boot Starter 使用依赖
-
-```java
-// TODO
-```
-
-### 使用代码如下：
-
-> 单元测试可直接运行
-> 所有参数注释信息和阿里云文档保持一致
-
-```java
 /**
  * @author LarryKoo (larrykoo@126.com)
  * @description 云盾内容安全单元测试
@@ -206,5 +203,3 @@ public class YundunTestCase extends TestCase {
         System.out.println("图片扫描结果：\n" + JSON.toJSONString(responseList, true));
     }
 }
-```
-
